@@ -1,0 +1,22 @@
+{
+  "name": "web-qa-automation",
+  "version": "0.0.2",
+  "private": true,
+  "author": "Jef Mayer",
+  "scripts": {
+    "test:play": "node run-playwright.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jefmayer/web-qa-automation"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.56.1",
+    "child_process": "^1.0.2",
+    "dotenv": "^17.2.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1"
+  }
+}
