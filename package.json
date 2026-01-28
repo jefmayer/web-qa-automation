@@ -4,7 +4,7 @@
   "private": true,
   "author": "Jef Mayer",
   "scripts": {
-    "test:play": "node run-playwright.js"
+    "test:play": "node run-playwright.ts"
   },
   "repository": {
     "type": "git",

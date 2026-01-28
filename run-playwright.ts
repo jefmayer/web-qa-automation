@@ -22,7 +22,7 @@ if (!specPath) {
   process.exit(1);
 }
 
-const result = spawnSync("node", [path.join(__dirname, "playwright-env.js")], {
+const result = spawnSync("node", [path.join(__dirname, "playwright-env.ts")], {
   env: process.env,
   encoding: "utf-8"
 });
