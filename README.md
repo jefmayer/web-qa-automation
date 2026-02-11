@@ -1,8 +1,8 @@
 # web-qa-automation
-**Automated Playwright tests for website QA.**
+**Automated Playwright Tests for Website QA**
 
 ## Overview
-This is a simple demo for automated quality assurance using [Playwright](https://playwright.dev/). I'll end up forking this for more involved client website testing
+This is a simple demo for automated quality assurance using [Playwright](https://playwright.dev/). I'll create a different repository for specific client website testing
 
 ## Features
 - End-to-end browser tests using Playwright
