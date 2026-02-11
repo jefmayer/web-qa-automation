@@ -23,7 +23,7 @@ npx playwright codegen
 ## Running Tests (Examples)
 ```bash
 npm run test:play --site=<name> --env=<name> --spec=<filename> --project=<name> --headed=<bool>
-npm run test:play --site=jefmayer --env=prod --spec=portfolio-nav-anchor --project=chrome --headed
+npm run test:play --site=jefmayer --env=prod --spec=portfolio-nav-anchor --project=Chrome --headed
 ```
 
 ## Reporting

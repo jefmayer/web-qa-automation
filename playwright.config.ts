@@ -1,6 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const getTimestamp = () => {
+  const now = new Date();
+  return now.toISOString().replace(/:/g, '-').split('.')[0]; 
+};
+
 const baseURL = process.env.BASE_URL || '';
+const site = process.env.npm_config_site;
+const envName = process.env.npm_config_env;
+const specKey = process.env.npm_config_spec;
+const timestamp = getTimestamp();
+const reportDir = `reports/${site}-${specKey}-${envName}-${timestamp}`;
 
 export default defineConfig({
   testDir: './playwright/websites',
@@ -16,11 +26,12 @@ export default defineConfig({
   },
   reporter: [
     ['list'],
-    ['html', { outputFolder: 'reports/html', open: 'never' }],
+    ['html', { outputFolder: reportDir, open: 'never' }],
   ],
   projects: [
-    { name: 'chrome', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox',  use: { ...devices['Desktop Firefox'] } },
-    { name: 'webkit',   use: { ...devices['Desktop Safari'] } },
+    { name: 'Chrome', use: { ...devices['Desktop Chrome'] } },
+    { name: 'Firefox',  use: { ...devices['Desktop Firefox'] } },
+    { name: 'Safari',   use: { ...devices['Desktop Safari'] } },
+    { name: 'Microsoft Edge',   use: { ...devices['Desktop Edge'], channel: 'msedge' } },
   ],
 });

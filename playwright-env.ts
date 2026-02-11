@@ -5,7 +5,7 @@ const MAP = {
 };
 
 const siteConfigVar = process.env.npm_config_site;
-const envConfigVar  = process.env.npm_config_env;
+const envConfigVar  = process.env.npm_config_env || process.env.TEST_ENV || 'uat';
 
 if (!siteConfigVar) {
   console.error("Missing --site. Example: --site=jefmayer");

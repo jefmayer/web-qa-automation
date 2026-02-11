@@ -2,10 +2,10 @@ const { spawnSync } = require("child_process");
 const path = require("path");
 
 const site = process.env.npm_config_site;
-const envName = process.env.npm_config_env;
 const specKey = process.env.npm_config_spec;
-const project = process.env.npm_config_project;
 const headedFlag = process.env.npm_config_headed;
+const envName = process.env.npm_config_env || process.env.TEST_ENV || 'uat';
+const project = process.env.npm_config_project || process.env.TEST_PROJECT || 'Chrome';
 
 const SPEC_MAP = {
   "portfolio-nav-anchor": "playwright/websites/jefmayer.com/portfolio-nav-anchor.spec.ts"

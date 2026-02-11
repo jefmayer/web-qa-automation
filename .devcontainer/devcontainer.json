@@ -1,0 +1,15 @@
+{
+  "name": "Playwright Dev Container",
+  "image": "mcr.microsoft.com/playwright:v1.56.1-jammy",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "forwardPorts": [9323],  
+  "capAdd": ["SYS_ADMIN"],
+  "securityOpt": ["seccomp=unconfined"]
+}
