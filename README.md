@@ -9,7 +9,7 @@ This is a simple custom test runner for automated quality assurance testing usin
 - Configurable per-client site targets
 - Supports local runs and CI/CD execution
 - Cross-browser and mobile viewport coverage
-- Included [ZeroStep](https://zerostep.com/) AI assistant integration
+- Includes [ZeroStep](https://zerostep.com/) AI assistant integration
 
 ## Getting Started
 ```bash
