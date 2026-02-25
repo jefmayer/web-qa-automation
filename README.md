@@ -2,13 +2,14 @@
 **Automated Playwright Tests for Website QA**
 
 ## Overview
-This is a simple demo for automated quality assurance using [Playwright](https://playwright.dev/). I'll create a different repository for specific client website testing
+This is a simple custom test runner for automated quality assurance testing using [Playwright](https://playwright.dev/). I&rsqup;ll create a different repository for specific client website testing
 
 ## Features
 - End-to-end browser tests using Playwright
 - Configurable per-client site targets
 - Supports local runs and CI/CD execution
 - Cross-browser and mobile viewport coverage
+- Included [ZeroStep](https://zerostep.com/) AI assistant integration
 
 ## Getting Started
 ```bash
