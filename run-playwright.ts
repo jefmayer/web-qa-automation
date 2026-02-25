@@ -1,11 +1,10 @@
 const { spawnSync } = require("child_process");
-const path = require("path");
 
 const site = process.env.npm_config_site;
 const specKey = process.env.npm_config_spec;
 const headedFlag = process.env.npm_config_headed;
-const envName = process.env.npm_config_env || process.env.TEST_ENV || 'uat';
-const project = process.env.npm_config_project || process.env.TEST_PROJECT || 'Chrome';
+const envName = process.env.npm_config_env || process.env.TEST_ENV || "uat";
+const project = process.env.npm_config_project || process.env.TEST_PROJECT || "Chrome";
 
 const SPEC_MAP = {
   "portfolio-nav-anchor": "playwright/websites/jefmayer.com/portfolio-nav-anchor.spec.ts"
@@ -22,8 +21,12 @@ if (!specPath) {
   process.exit(1);
 }
 
-const result = spawnSync("node", [path.join(__dirname, "playwright-env.ts")], {
-  env: process.env,
+const result = spawnSync("node", ["playwright-env.ts"], {
+  env: {
+    ...process.env,
+    TEST_ENV: envName,
+    TEST_SITE: site,
+  },
   encoding: "utf-8"
 });
 if (result.status !== 0) process.exit(result.status);
@@ -48,8 +51,8 @@ const pw = spawnSync(process.platform === "win32" ? "npx.cmd" : "npx", pwArgs, {
   env: {
     ...process.env,
     BASE_URL,
+    TEST_ENV: envName,
     TEST_SITE: site,
-    TEST_ENV: envName
   },
   stdio: "inherit"
 });

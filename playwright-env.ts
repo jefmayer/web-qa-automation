@@ -1,32 +1,36 @@
 const MAP = {
   jefmayer: {
+    test: "http://localhost:5000",
     prod: "https://www.jefmayer.com"
+  },
+  playwright: {
+    prod: "https://playwright.dev"
   }
 };
 
-const siteConfigVar = process.env.npm_config_site;
-const envConfigVar  = process.env.npm_config_env || process.env.TEST_ENV || 'uat';
+const testEnv  = process.env.TEST_ENV;
+const testSite = process.env.TEST_SITE;
 
-if (!siteConfigVar) {
+if (!testSite) {
   console.error("Missing --site. Example: --site=jefmayer");
   process.exit(1);
 }
 
-if (!envConfigVar) {
+if (!testEnv) {
   console.error("Missing --env. Example: --env=prod");
   process.exit(1);
 }
 
-if (!MAP[siteConfigVar]) {
-  console.error(`Unknown site '${siteConfigVar}'. Known sites: ${Object.keys(MAP).join(", ")}`);
+if (!MAP[testSite]) {
+  console.error(`Unknown site '${testSite}'. Known sites: ${Object.keys(MAP).join(", ")}`);
   process.exit(1);
 }
 
-if (!MAP[siteConfigVar][envConfigVar]) {
+if (!MAP[testSite][testEnv]) {
   console.error(
-    `Unknown env '${envConfigVar}' for site '${siteConfigVar}'. Known envs: ${Object.keys(MAP[siteConfigVar]).join(", ")}`
+    `Unknown env '${testEnv}' for site '${testSite}'. Known envs: ${Object.keys(MAP[testSite]).join(", ")}`
   );
   process.exit(1);
 }
 
-process.stdout.write(MAP[siteConfigVar][envConfigVar]);
+process.stdout.write(MAP[testSite][testEnv]);
