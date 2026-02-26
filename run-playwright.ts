@@ -42,7 +42,7 @@ if (project) {
   pwArgs.push(`--project=${project}`);
 }
 
-const headed = headedFlag !== "false";
+const headed = headedFlag !== "false" && headedFlag !== undefined;
 if (headed) {
   pwArgs.push("--headed");
 }
