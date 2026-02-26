@@ -1,8 +1,5 @@
 import { test } from '@playwright/test';
 import { expectInViewport } from '@utils/viewport-utils';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 test('Portfolio Nav Anchor', async ({ page }) => {
   await page.goto(process.env.BASE_URL, { waitUntil: 'load' });
@@ -12,5 +9,5 @@ test('Portfolio Nav Anchor', async ({ page }) => {
   await page.getByRole('button', { name: 'Work', exact: true }).click();
   await page.getByRole('menuitem', { name: 'Tumblr' }).click();
   await page.waitForTimeout(1500);
-  await expectInViewport(page.getByRole('heading', { name: 'Tumblr' }).first(), false);
+  await expectInViewport(page.getByRole('heading', { name: 'Tumblrrr' }).first(), false);
 });

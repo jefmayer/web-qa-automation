@@ -1,9 +1,6 @@
 import { test } from '@playwright/test';
 import { expectInViewport } from '@utils/viewport-utils';
-import * as dotenv from 'dotenv';
 import { ai } from '@zerostep/playwright'
-
-dotenv.config();
 
 test('Portfolio Nav Anchor', async ({ page }) => {
   await page.goto(process.env.BASE_URL, { waitUntil: 'load' });
