@@ -9,5 +9,5 @@ test('Portfolio Nav Anchor', async ({ page }) => {
   await page.getByRole('button', { name: 'Work', exact: true }).click();
   await page.getByRole('menuitem', { name: 'Tumblr' }).click();
   await page.waitForTimeout(1500);
-  await expectInViewport(page.getByRole('heading', { name: 'Tumblrrr' }).first(), false);
+  await expectInViewport(page.getByRole('heading', { name: 'Tumblr' }).first(), false);
 });
